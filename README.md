@@ -3,7 +3,7 @@
 <head>
 </head>
 <body>
-    <center><img src="/ok.jpg"><h1>MERN Fitness web aplication</h1></center>
+    <center><img src="/ok.jpg"><h1>Fitness web aplication using Express</h1></center>
     <hr>
     <br>
     <h3>Introduccion</h3>
