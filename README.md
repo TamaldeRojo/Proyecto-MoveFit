@@ -3,11 +3,17 @@
 <head>
 </head>
 <body>
-    <center><img src="styles/imgs/ok.jpg"><h1>Express Fitness web aplication</h1></center>
+    <center>
+    <h1>Express Fitness web aplication</h1>
+    <small>Hatsune Miku is with us</small>
+    </center>
+    <br>
+    <hr>
+    <center><img src="styles/imgs/ok.jpg"></center>
     <hr>
     <br>
     <h3>Introduccion</h3>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis, ea ipsa quaerat rerum neque esse soluta quia sapiente rem numquam?</p>
+    <p>Express app using HTML CSS and JAVASCRIPT</p>
     <hr>
 </body>
 </html>
