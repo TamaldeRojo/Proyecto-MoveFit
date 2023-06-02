@@ -1,0 +1,92 @@
+.content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.web-app{
+    
+    display: block;
+    justify-content: center;
+    margin: 0 10px;
+    margin-top: 10rem;
+    margin-bottom: 20px;
+    background-color: white;
+    padding:20px;
+    border-radius: 20px;
+}
+.web-app .web-text h1 {
+    display: flex;
+    font-size: xx-large;
+    justify-content: center;
+    
+}
+.web-app .web-text p{
+    margin-bottom: 10px;
+}
+.web-app .web-img img {
+    display: flex;
+    max-width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    margin: auto;
+    display: flex;
+}
+
+.movil-app{
+    margin: 0 10px;
+    display: block;
+    justify-content: center;
+    margin-top: 15rem;
+    margin-bottom: 20px;
+    background-color: white;
+    padding:20px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.movil-app .movil-text h1 {
+    display: flex;
+    font-size: xx-large;
+    justify-content: center;
+    
+}
+.movil-app .movil-img img {
+    max-width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+}
+.movil-app .movil-text p{
+    margin-bottom: 10px;
+}
+
+.hardware-app{
+    margin: 0 10px;
+    display: block;
+    justify-content: center;
+    margin-top: 10rem;
+    margin-bottom: 20px;
+    background-color: white;
+    padding:20px;
+    border-radius: 20px;
+}
+.hardware-app .hardware-text h1 {
+    display: flex;
+    font-size: xx-large;
+    justify-content: center;
+    
+}
+.hardware-app .hardware-img img{
+    max-width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    margin: auto;
+    display: flex;
+}
+.hardware-app .hardware-text p{
+    margin-bottom: 10px;
+}
