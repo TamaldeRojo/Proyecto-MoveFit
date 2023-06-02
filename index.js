@@ -4,6 +4,21 @@ const app = express()
 const port = 3000
 const path = __dirname + '/templates/'
 
+//db connection
+const url = "mongodb+srv://movefit:jugador@cluster0.2r49k9c.mongodb.net/"
+const mongoose = require('mongoose');
+
+main().catch(err => console.log(err));
+
+async function main() {
+  await mongoose.connect(url);
+  console.log('UWU')
+
+  // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
+}
+
+//end db connection
+
 //statics settings
 app.use(express.static(__dirname+'/styles'));
 

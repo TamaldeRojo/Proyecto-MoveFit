@@ -1,4 +1,4 @@
-use('MoveFitt');
+use('MoveFit');
 
 db.Excercises.insertOne({
     name : 'Squads',

@@ -1,5 +1,5 @@
 //My db
-use('MoveFitt');
+use('MoveFit');
 
  db.Users.insertOne(
     {

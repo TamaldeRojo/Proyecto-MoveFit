@@ -1,3 +1,3 @@
 
-use('MoveFitt');
+use('MoveFit');
 db.Users.find({})
