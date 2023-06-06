@@ -7,6 +7,7 @@ const path = __dirname + '/templates/'
 //db connection
 const url = "mongodb+srv://movefit:jugador@cluster0.2r49k9c.mongodb.net/"
 const mongoose = require('mongoose');
+//end db connection
 
 main().catch(err => console.log(err));
 
@@ -26,9 +27,16 @@ app.listen(port, () => {
 })
 //end statics settings
 
+
+//end 
+
+
+
+
 //PATH
 app.get('/', (req, res) => {
   res.sendFile(path + 'landingPage.html');
+  //res.render('navbar')
 })
 
 app.get('/about', (req, res) => {

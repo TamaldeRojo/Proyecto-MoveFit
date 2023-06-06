@@ -9,39 +9,75 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <h1>MoveFitt</h1>
-            <img src="imgs/icon.jpg" class="logo"> 
-        </div>
-        <input type="checkbox" id="nav_check" hidden>
-        
-        <nav>
-            <ul>
-                <li>
-                    <a href="/" class="active">Home</a>
-                </li>
-                <li>
-                    <a href="foro">Foro</a>
-                </li>
-                <li>
-                    <a href="instructions">Instructions</a>
-                </li>
-                <li>
-                    <a href="services">Services</a>
-                </li>
-                <li>
-                    <a href="about">About</a>
-                </li>
-                <button class="btn">Sing Up</button>
-                <button class="btn">Sign In</button>
-            </ul>
-            
-        </nav>
-        <label for="nav_check" class="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </label>
+        <a href="/" class="logo">MoveFitt</a>
+        <ul class="navbar">
+            <li><a href="/about">About us</a></li>
+            <li><a href="/instructions">Instructions</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><button id="btnLogin" class="login">Sign In</button></li>
+            <li><button id="btnReg" class="login-register">Sign Up</button></li>
+        </ul>
     </header>
+
+ <!--  Login/Reg -->
+ <div class="wrapper" >
+    <span class="icon-close" id="close">
+        <ion-icon name="close-outline"></ion-icon>
+    </span>
+    
+    <div class="form-box login">
+        <h2>Login</h2>
+        <form action="">
+            <div class="input-box">
+                <span class="icon">
+                </span>
+                
+                <input type="email" required>
+                <label>Email</label>
+            </div>
+            <div class="input-box">
+                <span class="cino"></span>
+                
+                <input type="password" required>
+                <label>Password</label>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <div class="login-register">
+                <p><a href="" class="register-link" id="reg-link"></a></p>
+            </div>
+        </form>
+    </div>
+
+    <div class="form-box register">
+        <h2>Register</h2>
+        <form action="">
+            <div class="input-box">
+                <span class="icon">
+                </span>
+                
+                <input type="text" required>
+                <label>Username</label>
+            </div>
+            <div class="input-box">
+                <span class="icon">
+                </span>
+                
+                <input type="email" required>
+                <label>Email</label>
+            </div>
+            <div class="input-box">
+                <span class="cino"></span>
+                
+                <input type="password" required>
+                <label>Password</label>
+            </div>
+            <button type="submit" class="btn">SignUp</button>
+            <div class="login-register">
+                <p><a href="#" class="login-link"></a></p>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- end login/register -->
 </body>
 </html>
