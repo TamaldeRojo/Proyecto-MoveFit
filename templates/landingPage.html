@@ -5,34 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing</title>
-    <link rel="stylesheet" type="text/css" href="/landing.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-   <section>
-    <div class="circle"></div>
-    <header>
-        <a href="/" class="logo">MoveFitt</a>
-        <ul class="navbar">
-            <li><a href="/about">About us</a></li>
-            <li><a href="/foro">Forum</a></li>
-            <li><a href="/instructions">Instructions</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><button class="login">Sign In</button></li>
-            <li><button class="reg">Sign Up</button></li>
-        </ul>
-    </header>
+<nav class="bg-[#758BFD]  fixed w-full z-20 top-0 left-0 border-b border-gray-200 bg-[#758BFD]">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <a href="#" class="flex items-center">
+        <img src="/imgs/tacos.jpeg" class="h-8 mr-3" alt="tacos">
+        <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Move Fit</span>
+    </a>
 
-    <div class="content">
-        <div class="boxtitle">
-            <h2>Muevete rico <br></h2>
-            <h2>Desde <span>tu casa</span></h2>
-            <p>Dios no solo mata pecadores</p>
-            <a href="">Bajar app</a>
-        </div>
-        <div class="imgbox">
-            <img src="imgs/asideNino.jpg" alt="">
-        </div>
+    <div class="flex md:order-2 mr-4">
+        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-3 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-4 md:mr-5 bg-[#27187e]hover:bg-blue-700 focus:ring-blue-800">login</button>
+      
+        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 bg-[#27187e] hover:bg-blue-700 focus:ring-blue-800">Regrsitro</button>
+
+
+        <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 bg-[#758BFD]" aria-controls="navbar-sticky" aria-expanded="false">
+
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-6 h-6" aria-hidden="true"  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+        </button>
     </div>
-   </section>
+
+    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+      <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-[#758BFD] md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-[#758BFD] bg-[#758BFD] bg-[#758BFD] bg-[#758BFD]">
+        <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:text-blue-500" aria-current="page">Home</a>
+          </li>
+        <li>
+          <a href="about" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:hover:text-[#f1f2f6]
+          text-[#f1f2f6] hover:bg-gray-700 text-[#f1f2f6] md:hover:bg-transparent bg-[#758BFD]">About</a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:hover:text-[#f1f2f6]
+          text-[#f1f2f6] hover:bg-gray-700 text-[#f1f2f6] md:hover:bg-transparent bg-[#758BFD]">Services</a>
+        </li>
+        
+       
+      </ul>
+    </div>
+    </div>
+  </nav>
+  <div class="w-full h-full bg-no-repeat bg-cover bg-left" style="background-image: url('imgs/white.jpg') ">
+  <section>
+    
+    <div class="grid max-w-screen-xl  py-[259px] mx-auto lg:gap-8 xl:gap-1 lg:py-[259px] lg:grid-cols-12">
+
+        
+        <div class="mr-auto place-self-center lg:col-span-7 ml-[64px] mb-[84px]">
+            <h1 class="max-w-full mb-4 text-4xl  font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-[#758bfd]">MoveFit</h1>
+            <p class="max-w-2xl mb-6 font-light text-black-500 lg:mb-8 bg-[#ff8600] p-5 md:text-lg lg:text-xl  text-[#000] rounded-lg">the best version of yourself, star with onclick</p>
+           
+            </a>
+            <a href="#" class="inline-flex items-center justify-center px-10 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-[#758BFD] dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                App
+            </a> 
+        </div>
+        <div class="hidden lg:mt-0  lg:col-span-5 
+        lg:flex w-1/2  ml-[70px] mt-[994px] ">
+            <img src="imgs/phone.png">
+        </div>                
+    </div>
+</section>
+</div>
 </body>
 </html>
