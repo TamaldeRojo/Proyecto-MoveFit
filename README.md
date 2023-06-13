@@ -9,7 +9,7 @@
     </center>
     <br>
     <hr>
-    <center><img src="styles/imgs/ok.jpg"></center>
+    <center><img src="./imgs/ok.jpg"></center>
     <hr>
     <br>
     <h3>Introduccion</h3>
