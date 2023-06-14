@@ -78,8 +78,6 @@ app.post("/signin",passport.authenticate('local-signin',{
   passReqToCallback: true
 }));
 
-
-
 app.get("/menu", (req, res, next) => {
   res.render("menu");
 });
