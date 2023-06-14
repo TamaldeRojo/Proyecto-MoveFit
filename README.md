@@ -5,15 +5,15 @@
 <body>
     <center>
     <h1>Express Fitness web aplication</h1>
-    <small>Hatsune Miku is with us</small>
+    <small>Express, Tailwind, ejs, Insta API </small>
     </center>
     <br>
     <hr>
-    <center><img src="./imgs/ok.jpg"></center>
+    <center><img src="./src/public/imgs/readme.png"></center>
     <hr>
     <br>
     <h3>Introduccion</h3>
-    <p>Express app using HTML CSS and JAVASCRIPT</p>
+    <p>For school propurse we are creating a crossplatform fitness ecosystem using web,mobile and raspberry</p>
     <hr>
 </body>
 </html>
