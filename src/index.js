@@ -10,13 +10,14 @@ const cookieParser = require("cookie-parser"); //se utiliza específicamente par
 const flash = require('express-flash')
 
 // settings
+
+app.use(express.static(__dirname+'/public')); 
 require('dotenv').config()
 app.use(router);
 require("./database");
 require("./passport/local-auth");
 const port = process.env.PORT;
 
-app.use(express.static(__dirname+'/public')); 
 
 app.set("views", path.join(__dirname, "views")); //__dirname agarra la ruta del archivo ejecutado
 app.engine("ejs", engine); //motor de plantillas
@@ -54,9 +55,7 @@ app.use((req,res,next)=>{
 //---------------------------end middleware
 
 //PATH
-app.get("/", (req, res, next) => {
-  res.render("index");
-});
+
 
 app.get("/signup", (req, res, next) => {
   res.render("signup");
@@ -80,6 +79,18 @@ app.post("/signin",passport.authenticate('local-signin',{
 
 app.get("/menu", (req, res, next) => {
   res.render("menu");
+});
+
+app.get("/", (req, res, next) => {
+  res.render("landing");
+});
+
+app.get("/about", (req, res, next) => {
+  res.render("about");
+});
+
+app.get("/instructions", (req, res, next) => {
+  res.render("instructions");
 });
 
 //END PATH
