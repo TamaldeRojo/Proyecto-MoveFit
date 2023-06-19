@@ -52,6 +52,10 @@ app.use((req,res,next)=>{
 })
 
 
+
+
+
+
 //---------------------------end middleware
 
 //PATH
@@ -76,6 +80,7 @@ app.post("/signin",passport.authenticate('local-signin',{
   failureRedirect: 'signin',
   passReqToCallback: true
 }));
+
 
 app.get("/menu", (req, res, next) => {
   res.render("menu");
