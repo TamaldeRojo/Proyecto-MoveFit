@@ -32,7 +32,7 @@ app.get('/login', (req, res) => {
   res.sendFile(path + 'components/Login.html');
 })
 
-app.get('/instructions', (req, res) => {
+app.get('/pepe', (req, res) => {
   res.sendFile(path + 'instructions.html');
 })
 
