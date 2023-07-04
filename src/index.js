@@ -57,6 +57,15 @@ app.use((req,res,next)=>{
 
 
 //---------------------------end middleware
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    
+    return next();
+  }
+
+ 
+  res.redirect('/signin'); 
+}
 
 //PATH
 
@@ -81,8 +90,17 @@ app.post("/signin",passport.authenticate('local-signin',{
   passReqToCallback: true
 }));
 
+app.get('/logout',(req,res,next)=>{
+  req.logout((err)=>{
+    if(err){
+      return next(err)
+    }
+    res.redirect('/')
+  })
+})
 
-app.get("/menu", (req, res, next) => {
+
+app.get("/menu", ensureAuthenticated ,(req, res, next) => {
   res.render("menu");
 });
 
@@ -98,6 +116,10 @@ app.get("/instructions", (req, res, next) => {
   res.render("instructions");
 });
 
+app.get("/profile", ensureAuthenticated,(req, res,next) => {
+  console.log(req.user)
+  res.render("profile",{email: req.user.email});
+});
 //END PATH
 
 app.listen(port, () => {
