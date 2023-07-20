@@ -14,38 +14,34 @@
 	aria-label="Sidebar">
 
 	<div class="h-full px-3 pb-4 overflow-y-auto ">
-		<h1>hello</h1>
+		
 		</div>
-
 </aside>
 
 <div class="grid grid-cols-2 p-4 justify-between mt-8 md:ml-[350px]">
-
 	<div class="p-4 sm:w-96 lg:w-[32rem] mt-14">
-		<ul class="flex items-center gap-5 text-black">
-			<li class="p-1 rounded border-my-2 border-b-2 border-red-400">
-				Following</li>
-			<li class="p-1 rounded ">For you</li>
-		</ul>
-		<hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
+		<hr class="h-px my-2 w-[108%] bg-gray-700 border-0">
 
-		<%- partial('layouts/card') %>
-		<%- partial('layouts/card') %>
-		<%- partial('layouts/card') %>
+		<ul>
+			<% realResponse.forEach(function(i) { %>
+				<li>
+				  <p>Email: <%= i.email %></p>
+				  <p>TypeOf: <%= i.typeOf %></p>
+				  <p>Count: <%= i.count %></p>
+				</li>
+			  <% }); %>
+		  </ul>
+		  <br><br><br>
 		
 	</div>
 
-	<div class="ml-32">
-		<h2 class="text-black text-sm font-bold mt-14 p-4">Algo</h2>
+		<div class="ml-32">
+			<h2 class="text-black text-sm font-bold mt-14 p-4"></h2>
 
-		<hr class="h-px my-3 bg-gray-200 border-0 ">
-		<p><a href="" class="text-sm text-blue-400 hover:underline">Otro  algo</a></p>
+			<hr class="h-px my-3 bg-gray-200 border-0 ">
+			<p><a href="" class="text-sm text-blue-400 hover:underline"></a></p>
+		</div>
 	</div>
-
-
-
-</div>
-
 </div>
 </body>
 </html>

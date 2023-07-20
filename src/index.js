@@ -1,3 +1,4 @@
+
 const express = require("express");
 const app = express();
 const router = express.Router();
@@ -8,6 +9,9 @@ const passport = require("passport");
 const session = require("express-session");
 const cookieParser = require("cookie-parser"); //se utiliza específicamente para analizar y extraer los datos de las cookies en una solicitud HTTP.
 const flash = require('express-flash')
+const axios = require('axios');
+const CryptoJS = require('crypto-js')
+
 
 // settings
 
@@ -45,27 +49,8 @@ app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use((req,res,next)=>{
-  res.locals.signupMessage = req.flash('signupMessage');
-  res.locals.uwu = req.flash('uwu');
-  next();
-})
 
 
-
-
-
-
-//---------------------------end middleware
-function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    
-    return next();
-  }
-
- 
-  res.redirect('/signin'); 
-}
 
 //PATH
 
@@ -74,34 +59,67 @@ app.get("/signup", (req, res, next) => {
   res.render("signup");
 });
 
-app.post('/signup',passport.authenticate('local-signup',{
-  successRedirect: 'menu',
-  failureRedirect: 'signup',
-  passReqToCallback: true
-}));
-
+app.post('/signup', async (req,res,next)=>{
+  try {
+    const response = await axios.post('https://fastapi-movefit.onrender.com/signup',req.body)
+    console.log(response.data[1])
+    a = response.data[1]
+    if (a == true){
+      //redirect
+      res.redirect('/menu')
+      console.log("a")
+    }else{
+      res.redirect('/signup')
+      print('Nop')
+    }
+  }catch(error){
+    res.redirect('/signup')
+    console.error('Error posting data:', error);
+    //res.status(500).json({ error: 'Something went wrong.' });
+  }
+});
 
 app.get("/signin", (req, res, next) => { //mucho ojo con poner app o router
   res.render("signin")
 });
-app.post("/signin",passport.authenticate('local-signin',{
-  successRedirect: 'menu',
-  failureRedirect: 'signin',
-  passReqToCallback: true
-}));
+
+app.post("/signin", async(req,res,next)=>{
+  try {
+    const response = await axios.post('https://fastapi-movefit.onrender.com/signin',req.body)
+    console.log(response.data[1])
+    a = response.data[1]
+    if (a == true){
+      //redirect
+      res.redirect('/menu')
+      console.log("a")
+    }else{
+      res.redirect('/signin')
+      print('Nop')
+    }
+  }catch(error){
+    res.redirect('/signin')
+    console.error('Error posting data:', error);
+    //res.status(500).json({ error: 'Something went wrong.' });
+  }
+});
 
 app.get('/logout',(req,res,next)=>{
-  req.logout((err)=>{
-    if(err){
-      return next(err)
-    }
     res.redirect('/')
   })
-})
 
-
-app.get("/menu", ensureAuthenticated ,(req, res, next) => {
-  res.render("menu");
+app.get("/menu",async(req, res, next) => {
+  try {
+    console.log("menu")
+    const response = await axios.get('https://fastapi-movefit.onrender.com/exercises')
+    const realResponse = response.data.reverse()
+    console.log(realResponse)
+    res.render("menu",{realResponse});
+    
+  }catch{
+    console.log("couldn t")
+    res.render("menu");
+  }
+  
 });
 
 app.get("/", (req, res, next) => {
@@ -116,15 +134,16 @@ app.get("/instructions", (req, res, next) => {
   res.render("instructions");
 });
 
-app.get("/profile", ensureAuthenticated,(req, res,next) => {
+app.get("/profile",(req, res,next) => {
   console.log(req.user)
   res.render("profile",{email: req.user.email});
 });
 //END PATH
 
 app.listen(port, () => {
-  console.log("Puerto abierto en: ", port);
+  console.log("Puerto abierto en:", port);
 });
+
 
 //404 PAGE
 /* app.use((req,res)=>{
