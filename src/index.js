@@ -61,7 +61,7 @@ app.get("/signup", (req, res, next) => {
 
 app.post('/signup', async (req,res,next)=>{
   try {
-    const response = await axios.post('https://fastapi-movefit.onrender.com/signup',req.body)
+    const response = await axios.post('https://mainapi-istq.onrender.com/signup',req.body)
     console.log(response.data[1])
     a = response.data[1]
     if (a == true){
@@ -85,7 +85,7 @@ app.get("/signin", (req, res, next) => { //mucho ojo con poner app o router
 
 app.post("/signin", async(req,res,next)=>{
   try {
-    const response = await axios.post('https://fastapi-movefit.onrender.com/signin',req.body)
+    const response = await axios.post('https://mainapi-istq.onrender.com/signin',req.body)
     console.log(response.data[1])
     a = response.data[1]
     if (a == true){
@@ -110,7 +110,7 @@ app.get('/logout',(req,res,next)=>{
 app.get("/menu",async(req, res, next) => {
   try {
     console.log("menu")
-    const response = await axios.get('https://fastapi-movefit.onrender.com/exercises')
+    const response = await axios.get('https://mainapi-istq.onrender.com/exercises')
     const realResponse = response.data.reverse()
     console.log(realResponse)
     res.render("menu",{realResponse});
@@ -146,7 +146,7 @@ app.listen(port, () => {
 
 
 //404 PAGE
-/* app.use((req,res)=>{
-  res.status(404).sendFile(path+'notFound.html')
-}) */
+app.use((req,res)=>{
+  res.status(404).sendFile("404.ejs",{ root: __dirname+'/views/' })
+}) 
 //END 404 PAGE
