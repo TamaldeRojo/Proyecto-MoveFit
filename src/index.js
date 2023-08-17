@@ -1,4 +1,3 @@
-
 const express = require("express");
 const app = express();
 const router = express.Router();
@@ -38,20 +37,13 @@ app.use(
 //end  settings
 
 //-------------------------- middleware
-
 app.use(flash()) //debe ir despues de session, pero antes de passport middleware 
-
 app.use(morgan('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-
 app.use(passport.initialize());
 app.use(passport.session());
-
-
-
-
 //PATH
 
 
